@@ -69,13 +69,25 @@
             <p><a href="Scatter_Plot_Data.csv" download>예제 데이터 다운로드</a></p>
             <div id="scatterPlot"></div>
             <pre><code>
-// Plotly.js를 사용한 산점도 예제
-Plotly.newPlot('scatterPlot', [{
-    x: [1, 2, 3, 4, 5],
-    y: [2, 4, 6, 8, 10],
-    mode: 'markers',
-    type: 'scatter'
-}]);
+                # Google-colab 환경에서 Python 코드 예시
+
+                import matplotlib.pyplot as plt
+
+                # 데이터
+                x = [1, 2, 3, 4, 5]
+                y = [2, 4, 6, 8, 10]
+                
+                # 산점도 그리기
+                plt.scatter(x, y)
+                
+                # 레이블, 제목 등 추가
+                plt.xlabel('X 축')
+                plt.ylabel('Y 축')
+                plt.title('Matplotlib 산점도 예시')
+                
+                # 그래프 표시
+                plt.show()
+                
                 </code></pre>
         </div>
 
@@ -86,13 +98,46 @@ Plotly.newPlot('scatterPlot', [{
             <p><a href="Heatmap_Correlation_Data.csv" download>예제 데이터 다운로드</a></p>
             <div id="heatMap"></div>
             <pre><code>
-// Plotly.js를 사용한 히트맵 예제
-Plotly.newPlot('heatMap', [{
-    z: [[1, 0.5, 0.3], [0.5, 1, 0.2], [0.3, 0.2, 1]],
-    x: ['Feature1', 'Feature2', 'Feature3'],
-    y: ['Feature1', 'Feature2', 'Feature3'],
-    type: 'heatmap'
-}]);
+                # Google-colab 환경에서 Python 코드 예시
+
+                import matplotlib.pyplot as plt
+                import numpy as np
+                
+                # 히트맵에 표시할 데이터 (3×3 행렬)
+                data = np.array([
+                    [1,   0.5, 0.3],
+                    [0.5, 1,   0.2],
+                    [0.3, 0.2, 1]
+                ])
+                
+                # X, Y축 레이블
+                x_labels = ['Feature1', 'Feature2', 'Feature3']
+                y_labels = ['Feature1', 'Feature2', 'Feature3']
+                
+                # 그래프 객체(figure)와 축(axes) 생성
+                fig, ax = plt.subplots()
+                
+                # 히트맵 생성
+                heatmap = ax.imshow(data, cmap='viridis', interpolation='nearest')
+                
+                # X축, Y축 위치에 맞춰 레이블 설정
+                ax.set_xticks(np.arange(len(x_labels)))
+                ax.set_yticks(np.arange(len(y_labels)))
+                ax.set_xticklabels(x_labels)
+                ax.set_yticklabels(y_labels)
+                
+                # X축 레이블이 겹치지 않도록 회전 (필요시)
+                plt.setp(ax.get_xticklabels(), rotation=45, ha='right')
+                
+                # 컬러바(색상 범례) 표시
+                plt.colorbar(heatmap)
+                
+                # 그래프 제목 (선택)
+                ax.set_title('히트맵 예시')
+                
+                # 그래프 표시
+                plt.show()
+                
                 </code></pre>
         </div>
 
@@ -103,11 +148,24 @@ Plotly.newPlot('heatMap', [{
             <p><a href="Histogram_Data.csv" download>예제 데이터 다운로드</a></p>
             <div id="histogramPlot"></div>
             <pre><code>
-// Plotly.js를 사용한 히스토그램 예제
-Plotly.newPlot('histogramPlot', [{
-    x: [1, 2, 2, 3, 3, 3, 4, 4, 4, 4],
-    type: 'histogram'
-}]);
+                # Google-colab 환경에서 Python 코드 예시
+
+                import matplotlib.pyplot as plt
+                
+                # 예시 데이터 
+                x = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+
+                # 히스토그램 생성
+                plt.hist(x, bins='auto', edgecolor='black')
+
+                # 그래프 제목 및 축 라벨 설정
+                plt.title('히스토그램 예시')
+                plt.xlabel('값')
+                plt.ylabel('빈도')
+
+                # 그래프 표시
+                plt.show()
+
                 </code></pre>
         </div>
 
@@ -118,13 +176,25 @@ Plotly.newPlot('histogramPlot', [{
             <p><a href="Line_Graph_Data.csv" download>예제 데이터 다운로드</a></p>
             <div id="lineGraph"></div>
             <pre><code>
-// Plotly.js를 사용한 선형 그래프 예제
-Plotly.newPlot('lineGraph', [{
-    x: [1, 2, 3, 4, 5],
-    y: [10, 20, 15, 30, 25],
-    type: 'scatter',
-    mode: 'lines'
-}]);
+                # Google-colab 환경에서 Python 코드 예시
+
+                import matplotlib.pyplot as plt
+
+                # 예시 데이터 
+                x = [1, 2, 3, 4, 5]
+                y = [10, 20, 15, 30, 25]
+
+                # 선형 그래프 생성
+                plt.plot(x, y, marker='o', linestyle='-', color='b')
+
+                # 그래프 제목 및 축 레이블 설정
+                plt.title('선형 그래프 예시')
+                plt.xlabel('X 축')
+                plt.ylabel('Y 축')
+
+                # 그래프 표시
+                plt.show()
+
                 </code></pre>
         </div>
 
@@ -135,11 +205,22 @@ Plotly.newPlot('lineGraph', [{
             <p><a href="Box_Plot_Data.csv" download>예제 데이터 다운로드</a></p>
             <div id="boxPlot"></div>
             <pre><code>
-// Plotly.js를 사용한 박스플롯 예제
-Plotly.newPlot('boxPlot', [{
-    y: [1, 2, 2, 3, 4, 5, 6, 7],
-    type: 'box'
-}]);
+                # Google-colab 환경에서 Python 코드 예시
+
+                import matplotlib.pyplot as plt
+
+                # 예시 데이터 (Plotly.js 예제와 동일)
+                data = [1, 2, 2, 3, 4, 5, 6, 7] 
+
+                # 박스플롯 생성
+                plt.boxplot(data)
+
+                # 그래프 제목 설정
+                plt.title('박스플롯 예시')
+
+                # 그래프 표시
+                plt.show()
+
                 </code></pre>
         </div>
 
