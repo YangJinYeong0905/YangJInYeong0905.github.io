@@ -440,6 +440,24 @@ plt.show()
             });
         });
     </script>
+
+      <!-- Plotly.js (최신 버전) -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- highlight.js (코드 문법 하이라이팅) -->
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/lib/core.js"></script>
+  <!-- 언어 스펙트럼을 더 많이 쓰려면 combined 버전이나 필요한 언어만 별도 로드 -->
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/lib/languages/python.js"></script>
+  <script>
+    // highlight.js 초기화
+    hljs.registerLanguage('python', window.hljsDefinePython);
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+    });
+  </script>
+  
 </body>
 </html>
 
